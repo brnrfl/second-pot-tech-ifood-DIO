@@ -50,4 +50,4 @@ function calculatePlayersLevel(totalWins){
 let nivel = calculatePlayersLevel(saldoVitorias)
 
 // Exibe uma mensagem com o saldo de vitórias e o nível do jogador
-alert(`O Herói tem saldo de ${saldoVitorias} vitórias está no nível ${nivel}`)
+alert(`O Herói tem saldo de ${saldoVitorias} vitórias e está no nível ${nivel}`)

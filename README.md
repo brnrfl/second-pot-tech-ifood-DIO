@@ -5,7 +5,7 @@
     - Operadores<br>
     - Laços de repetição<br>
     - Estruturas de decisões<br>
-		- Funções
+	- Funções
 
 ## Objetivo
 Crie uma função que recebe como parâmetro a quantidade de vitórias e derrotas de um jogador,
@@ -20,4 +20,4 @@ depois disso retorne o resultado para uma variável, o saldo de Rankeadas deve s
 
 ## Saída
 Ao final deve exibir a seguinte mensagem:
-"O Herói tem saldo de **{saldoVitorias}** está no nível de **{nivel}**"
+"O Herói tem saldo de **{saldoVitorias}** vitótias está no nível **{nivel}**"

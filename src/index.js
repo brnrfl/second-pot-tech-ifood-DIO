@@ -1,40 +1,53 @@
+// Definição das variáveis globais para armazenar as contagens de vitórias e derrotas
 let countWins
 let countLosses
 
-do {
-    countWins = prompt("Digite quantas vítorias você teve:")
-    countWins = parseInt(countWins)
-} while (isNaN(countWins))
+// Função para obter a entrada do usuário e garantir que seja um número inteiro válido
+function getEntranceInteger(entranceMessage){
+    let entrance
+    let verifyNumEntrance
+    // Loop para garantir que a entrada seja um número inteiro válido e não contenha vírgula ou ponto
+    do {
+        entrance = prompt(entranceMessage) // Obtém a entrada do usuário
+        verifyNumEntrance = parseInt(entrance) // Tenta converter a entrada em um número inteiro
+    // Continua o loop se a entrada não for um número inteiro válido ou contiver vírgula ou ponto
+    } while (isNaN(verifyNumEntrance) || entrance.includes(",") || entrance.includes(".")) 
+    return verifyNumEntrance// Retorna o número inteiro convertido
+}
 
-do {
-    countLosses = prompt("Digite quantas derrotas você teve:")
-    countLosses = parseInt(countLosses)
-} while (isNaN(countLosses))
+// Obtém a quantidade de vitórias e derrotas do jogador usando a função getEntranceInteger
+countWins = getEntranceInteger("Digite quantas vítorias você teve:")
+countLosses = getEntranceInteger("Digite quantas derrotas você teve:")
 
+// Função para calcular o saldo de vitórias (vitórias - derrotas)
 function calculateWins(wins, losses){
     return wins - losses
 }
 
+// Calcula o saldo de vitórias usando a função calculateWins
 let saldoVitorias = calculateWins(countWins, countLosses)
 
+// Função para determinar o nível do jogador com base no saldo de vitórias
 function calculatePlayersLevel(totalWins){
     if (totalWins <= 10){
         return "Ferro"
-    } else if (10 < totalWins && totalWins <= 20){
+    } else if (totalWins <= 20){
         return "Bronze"
-    } else if (20 < totalWins && totalWins <= 50){
+    } else if (totalWins <= 50){
         return "Prata"
-    } else if (50 < totalWins && totalWins <= 80){
+    } else if (totalWins <= 80){
         return "Ouro"
-    } else if (80 < totalWins && totalWins <= 90){
+    } else if (totalWins <= 90){
         return "Diamante"
-    } else if (90 < totalWins && totalWins <= 100){
+    } else if (totalWins <= 100){
         return "Lendário"
     } else {
         return "Imortal"
     }
 }
 
+// Determina o nível do jogador usando a função calculatePlayersLevel
 let nivel = calculatePlayersLevel(saldoVitorias)
 
-alert(`O Herói tem saldo de ${saldoVitorias} vitórias está no nível de ${nivel}`)
+// Exibe uma mensagem com o saldo de vitórias e o nível do jogador
+alert(`O Herói tem saldo de ${saldoVitorias} vitórias está no nível ${nivel}`)
